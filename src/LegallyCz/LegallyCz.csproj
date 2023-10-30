@@ -10,7 +10,7 @@
 
   <PropertyGroup>
     <PackageId>HraveMzdy.LegallyCz</PackageId>
-    <Version>0.0.1</Version>
+    <Version>0.0.3</Version>
     <Authors>Ladislav Lisy</Authors>
     <PackageIcon>icon-square.png</PackageIcon>
     <PackageTags>Salary, Health, Social, Taxing Properties for years 2010-2022</PackageTags>
@@ -30,7 +30,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>hravemzdy__org_publish_key.snk</AssemblyOriginatorKeyFile>
-    <ReleaseVersion>0.0.1</ReleaseVersion>
+    <ReleaseVersion>0.0.3</ReleaseVersion>
     <SynchReleaseVersion>true</SynchReleaseVersion>
   </PropertyGroup>
 
