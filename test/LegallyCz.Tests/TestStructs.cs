@@ -1,0 +1,10 @@
+﻿namespace LegallyCz.Tests;
+public record TestScenario(string testTitle, TestParams[] tests);
+public record TestParams(string testName, Int16 testYear, Int16 testMonth, Int16 resultYear);
+public record TestData(string testTitle, TestParams test);
+public record TestIntScenario(string testTitle, TestIntParams[] tests);
+public record TestIntParams(string testName, Int16 testYear, Int16 testMonth, Int16 resultYear, Int16 resultMonth, Int32 resultValue);
+public record TestIntData(string testTitle, TestIntParams test);
+public record TestDecScenario(string testTitle, TestDecParams[] tests);
+public record TestDecParams(string testName, Int16 testYear, Int16 testMonth, Int16 resultYear, Int16 resultMonth, Decimal resultValue);
+public record TestDecData(string testTitle, TestDecParams test);

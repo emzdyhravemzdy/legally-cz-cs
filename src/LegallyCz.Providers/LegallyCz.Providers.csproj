@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>HraveMzdy.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>HraveMzdy.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>HraveMzdy.LegallyCz.Providers</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>Ladislav Lisy</Authors>
+    <PackageIcon>icon-square.png</PackageIcon>
+    <PackageTags>Salary, Health, Social, Taxing Properties for years 2010-2022</PackageTags>
+    <Description>A simple, Salary, Health, Social, Taxing Calculator</Description>
+    <PackageProjectUrl>https://github.com/emzdyhravemzdy/legally-cz-cs</PackageProjectUrl>
+    <RepositoryType>github</RepositoryType>
+    <licenses>https://opensource.org/licenses/MIT</licenses>
+    <RepositoryUrl>https://github.com/emzdyhravemzdy/legally-cz-cs.git</RepositoryUrl>
+    <PackageOutputPath>../artifacts/</PackageOutputPath>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Copyright>Copyright 2023</Copyright>
+    <Owners>hravemzdy.org</Owners>
+    <Title>A simple, Salary, Health, Social, Taxing Calculator</Title>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>hravemzdy__org_publish_key.snk</AssemblyOriginatorKeyFile>
+    <ReleaseVersion>0.0.1</ReleaseVersion>
+    <SynchReleaseVersion>true</SynchReleaseVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../assets/icon-square.png" Pack="true" Visible="false" PackagePath="" />
+    <None Include="Stylecop.json" />
+    <AdditionalFiles Include="Stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LegallyCz\LegallyCz.csproj" />
+  </ItemGroup>
+
+</Project>
