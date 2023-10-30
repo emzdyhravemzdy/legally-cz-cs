@@ -4,10 +4,10 @@ namespace HraveMzdy.LegallyCz.Types;
 
 public class LegallyPeriod : ILegallyPeriod
 {
-    public static readonly Int32 ZeroCode = 0;
+    public static readonly Int32 EmptyCode = 0;
 
-    public static readonly LegallyPeriod Zero = New();
-    public static LegallyPeriod New() => new(ZeroCode);
+    public static readonly LegallyPeriod Empty = new(EmptyCode);
+    public static LegallyPeriod New() => new(EmptyCode);
     public static LegallyPeriod YearMonth(int year, int month) => new(year, month);
 
     public LegallyPeriod(int code)
