@@ -11,5 +11,5 @@ public interface IServiceLegallyCz
     void AddSocialProviders(IEnumerable<Type> providerTypes);
     void AddTaxingProviders(IEnumerable<Type> providerTypes);
 #endif
-    ErrorOr<IBundleProps> GetBundle(ILegallyPeriod period);
+    ErrorOr<ILegallyRules> GetBundle(ILegallyPeriod period);
 }

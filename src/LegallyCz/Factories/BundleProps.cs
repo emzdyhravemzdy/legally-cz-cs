@@ -3,7 +3,7 @@ using HraveMzdy.LegallyCz.Props;
 
 namespace HraveMzdy.LegallyCz.Factories;
 
-public class BundleProps : IBundleProps
+public class BundleProps : ILegallyRules
 {
     public BundleProps(ILegallyPeriod period,
         IPropsSalary salary,
@@ -11,18 +11,18 @@ public class BundleProps : IBundleProps
         IPropsSocial social,
         IPropsTaxing taxing)
     {
-        PeriodProps = (ILegallyPeriod)period.Clone();
+        Period = (ILegallyPeriod)period.Clone();
         SalaryProps = salary;
         HealthProps = health;
         SocialProps = social;
         TaxingProps = taxing;
     }
-    public ILegallyPeriod PeriodProps { get; }
+    public ILegallyPeriod Period { get; }
     public IPropsSalary SalaryProps { get; }
     public IPropsHealth HealthProps { get; }
     public IPropsSocial SocialProps { get; }
     public IPropsTaxing TaxingProps { get; }
-    public static IBundleProps Empty(ILegallyPeriod period)
+    public static ILegallyRules Empty(ILegallyPeriod period)
     {
         return new BundleProps(period,
             PropsSalary.Empty(),

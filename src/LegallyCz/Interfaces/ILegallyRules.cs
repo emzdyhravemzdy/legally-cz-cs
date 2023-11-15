@@ -1,8 +1,8 @@
 ﻿namespace HraveMzdy.LegallyCz.Interfaces;
 
-public interface IBundleProps
+public interface ILegallyRules
 {
-    ILegallyPeriod PeriodProps { get; }
+    ILegallyPeriod Period { get; }
     IPropsSalary SalaryProps { get; }
     IPropsHealth HealthProps { get; }
     IPropsSocial SocialProps { get; }

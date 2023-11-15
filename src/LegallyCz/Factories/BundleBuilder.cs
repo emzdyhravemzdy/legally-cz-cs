@@ -48,7 +48,7 @@ class BundleBuilder : IBundleBuilder
         }
         return true;
     }
-    public IBundleProps? GetBundle(ILegallyPeriod period)
+    public ILegallyRules? GetBundle(ILegallyPeriod period)
     {
         IPropsSalary salary = GetSalaryProps(period);
         IPropsHealth health = GetHealthProps(period);

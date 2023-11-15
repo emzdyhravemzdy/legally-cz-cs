@@ -11,5 +11,5 @@ interface IBundleBuilder
     void AddSocialProviders(IEnumerable<Type> providerTypes);
     void AddTaxingProviders(IEnumerable<Type> providerTypes);
 #endif
-    IBundleProps? GetBundle(ILegallyPeriod period);
+    ILegallyRules? GetBundle(ILegallyPeriod period);
 }

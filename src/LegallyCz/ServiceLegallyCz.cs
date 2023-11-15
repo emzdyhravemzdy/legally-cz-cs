@@ -39,20 +39,20 @@ public class ServiceLegallyCz : IServiceLegallyCz
         Builder.AddTaxingProviders(providerTypes);
     }
 #endif
-    public ErrorOr<IBundleProps> GetBundle(ILegallyPeriod period)
+    public ErrorOr<ILegallyRules> GetBundle(ILegallyPeriod period)
     {
         var resultBundle = Builder.GetBundle(period);
         if (resultBundle is not null)
         {
-            if (resultBundle.PeriodProps.Code == 0)
+            if (resultBundle.Period.Code == 0)
             {
                 return Errors.History.BundleEmpty(period);
             }
-            if (resultBundle.PeriodProps.Code < period.Code)
+            if (resultBundle.Period.Code < period.Code)
             {
                 return Errors.History.BundleInvalid(period);
             }
-            return ErrorOrResult<IBundleProps>.Success(resultBundle);
+            return ErrorOrResult<ILegallyRules>.Success(resultBundle);
         }
         return Errors.History.BundleNone(period);
      }
