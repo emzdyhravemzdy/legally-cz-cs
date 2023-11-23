@@ -7,16 +7,16 @@ public class Service_LegallyCz_Example_TaxingTest : Service_LegallyCz_Example_Ba
     public Service_LegallyCz_Example_TaxingTest(ITestOutputHelper outputHelper, string testSuiteFileName) : base(outputHelper, testSuiteFileName)
     {
     }
-    protected void ShouldBeValidBundle(ErrorOr<IBundleProps> testResult, short resultYear, short resultMonth)
+    protected void ShouldBeValidBundle(ErrorOr<ILegallyRules> testResult, short resultYear, short resultMonth)
     {
         try
         {
             testResult.IsError.Should().BeFalse();
             testResult.MatchSucc(r => {
                     r.Should().NotBeNull();
-                    r.Should().BeAssignableTo<IBundleProps>();
-                    r.PeriodProps.Year.Should().Be(resultYear);
-                    r.PeriodProps.Month.Should().Be(resultMonth);
+                    r.Should().BeAssignableTo<ILegallyRules>();
+                    r.Period.Year.Should().Be(resultYear);
+                    r.Period.Month.Should().Be(resultMonth);
                     r.SocialProps.Should().NotBeNull();
                 });
         }

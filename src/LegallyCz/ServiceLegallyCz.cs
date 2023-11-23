@@ -52,7 +52,7 @@ public class ServiceLegallyCz : IServiceLegallyCz
             {
                 return Errors.History.BundleInvalid(period);
             }
-            return ErrorOrResult<ILegallyRules>.Success(resultBundle);
+            return MakeErrorOr<ILegallyRules>.Success(resultBundle);
         }
         return Errors.History.BundleNone(period);
      }
