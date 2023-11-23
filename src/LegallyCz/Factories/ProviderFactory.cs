@@ -2,7 +2,9 @@
 using HraveMzdy.LegallyCz.Interfaces;
 using HraveMzdy.LegallyCz.Providers;
 using Microsoft.Extensions.DependencyInjection;
+#if __VERSIONS__
 using System.Collections.Immutable;
+#endif
 
 namespace HraveMzdy.LegallyCz.Factories;
 using VERSION = Int16;

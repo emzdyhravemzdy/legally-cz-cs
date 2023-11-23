@@ -57,7 +57,7 @@ class BundleBuilder : IBundleBuilder
 
         if (IsValidBundle(salary, health, social, taxing))
         {
-            return new BundleProps(period, salary, health, social, taxing);
+            return new LegallyRules(period, salary, health, social, taxing);
         }
         return null;
     }

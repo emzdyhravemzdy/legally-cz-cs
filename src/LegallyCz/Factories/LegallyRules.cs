@@ -3,9 +3,9 @@ using HraveMzdy.LegallyCz.Props;
 
 namespace HraveMzdy.LegallyCz.Factories;
 
-public class BundleProps : ILegallyRules
+public class LegallyRules : ILegallyRules
 {
-    public BundleProps(ILegallyPeriod period,
+    public LegallyRules(ILegallyPeriod period,
         IPropsSalary salary,
         IPropsHealth health,
         IPropsSocial social,
@@ -24,7 +24,7 @@ public class BundleProps : ILegallyRules
     public IPropsTaxing TaxingProps { get; }
     public static ILegallyRules Empty(ILegallyPeriod period)
     {
-        return new BundleProps(period,
+        return new LegallyRules(period,
             PropsSalary.Empty(),
             PropsHealth.Empty(),
             PropsSocial2010.Empty(),

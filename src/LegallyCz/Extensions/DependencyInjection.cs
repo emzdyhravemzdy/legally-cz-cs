@@ -37,9 +37,9 @@ public static class DependencyInjection
         var configuration = app.Services.GetRequiredService<LegallyCzConfiguration>();
         configuration.LogDiscoveredProviderTypes(logger);
 
+#if __VERSIONS__
         var service = app.Services.GetRequiredService<IServiceLegallyCz>();
 
-#if __VERSIONS__
         service.AddSalaryProviders(configuration.SalaryProviderTypes);
 
         service.AddHealthProviders(configuration.HealthProviderTypes);
