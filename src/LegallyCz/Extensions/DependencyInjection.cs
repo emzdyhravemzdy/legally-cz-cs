@@ -151,8 +151,7 @@ public static class DependencyInjection
                 .Where(t =>
                     !t.IsAbstract &&
                     typeof(TProvider).IsAssignableFrom(t) &&
-                    t != typeof(TProvider) &&
-                    t.IsPublic
+                    t != typeof(TProvider)
                 ));
 
             providerTypes.AddRange(providers);
