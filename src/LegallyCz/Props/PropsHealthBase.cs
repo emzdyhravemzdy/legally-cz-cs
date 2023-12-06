@@ -185,7 +185,7 @@ public abstract class PropsHealthBase : PropsBase, IPropsHealth
                     remAnnualsBasis = Math.Max(0, (agr.Item2 - cutAnnualsBasis));
                 }
 
-                PartakeHealthResult r = new PartakeHealthResult(x.ContractCode, x.SubjectType, x.InterestCode, x.SubjectTerm, x.PartakeCode, x.TargetsBase, Math.Max(0, cutAnnualsBasis));
+                PartakeHealthResult r = new PartakeHealthResult(x.ContractCode, x.TaxingTerm, x.InterestCode, x.SubjectTerm, x.PartakeCode, x.TargetsBase, Math.Max(0, cutAnnualsBasis));
                 return new Tuple<Int32, Int32, IEnumerable<PartakeHealthResult>>(
                     agr.Item1, remAnnualsBasis, agr.Item3.Concat(new PartakeHealthResult[] { r }).ToArray());
             });
