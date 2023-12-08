@@ -228,6 +228,14 @@ namespace HraveMzdy.LegallyCz.Props
             }
             return benefitValue;
         }
+        public Int32 TaxRebateAllowance(Int32 taxesResult, Int32 taxingAllowance, Int32 taxesRebate)
+        {
+            decimal taxesAfterRebate = decimal.Subtract(taxesResult, taxesRebate);
+            decimal taxesRebateValue = decimal.Subtract(taxingAllowance,
+                Math.Max(0m, decimal.Subtract(taxingAllowance, taxesAfterRebate)));
+
+            return OperationsRound.RoundToInt(taxesRebateValue);
+        }
         public Int32 BonusChildRaw(Int32 income, Int32 benefit, Int32 rebated)
         {
             decimal bonusForChild = decimal.Negate(Math.Min(0, rebated - benefit));

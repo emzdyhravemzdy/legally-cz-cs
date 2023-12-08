@@ -32,6 +32,7 @@ public interface IPropsTaxing : IProps
     Int32 BenefitAllowanceDisability(TaxDeclSignOption signOption, TaxDeclDisabilityOption benefitOption);
     Int32 BenefitAllowanceStudy(TaxDeclSignOption signOption, TaxDeclBenneOption benefitOption);
     Int32 BenefitAllowanceChild(TaxDeclSignOption signOption, TaxDeclBenneOption benefitOption, Int32 benefitOrder, Int32 disabilOption);
+    Int32 TaxRebateAllowance(Int32 taxesResult, Int32 taxingAllowance, Int32 taxesRebate);
     Int32 BonusChildRaw(Int32 income, Int32 benefit, Int32 rebated);
     Int32 BonusChildFix(Int32 income, Int32 benefit, Int32 rebated);
     Int32 TaxableIncomeSupers(Int32 incomeResult, Int32 healthResult, Int32 socialResult);
