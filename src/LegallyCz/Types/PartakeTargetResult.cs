@@ -5,15 +5,15 @@ namespace HraveMzdy.LegallyCz.Types;
 public class PartakeHealthTarget
 {
     public Int16 ContractCode { get; private set; }
-    public WorkTaxingTerms TaxingTerm { get; private set; }
+    public WorkTaxingTerms TaxpayerTerm { get; private set; }
     public Int16 InterestCode { get; private set; }
     public WorkHealthTerms SubjectTerm { get; private set; }
     public Int16 PartakeCode { get; private set; }
     public Int32 TargetsBase { get; private set; }
-    public PartakeHealthTarget(Int16 contractCode, WorkTaxingTerms taxingTerm, Int16 interestCode, WorkHealthTerms subjectTerm, Int16 partakeCode, Int32 targetsBase)
+    public PartakeHealthTarget(Int16 contractCode, WorkTaxingTerms taxpayerTerm, Int16 interestCode, WorkHealthTerms subjectTerm, Int16 partakeCode, Int32 targetsBase)
     {
         this.ContractCode = contractCode;
-        this.TaxingTerm = taxingTerm;
+        this.TaxpayerTerm = taxpayerTerm;
         this.InterestCode = interestCode;
         this.SubjectTerm = subjectTerm;
         this.PartakeCode = partakeCode;
@@ -29,7 +29,7 @@ public class PartakeHealthTarget
         public static Int32 IncomeScore(PartakeHealthTarget t)
         {
             Int32 resultType = 0;
-            switch (t.TaxingTerm)
+            switch (t.TaxpayerTerm)
             {
                 case WorkTaxingTerms.TAXING_TERM_EMPLOYMENTS:
                     resultType = 900;
@@ -109,15 +109,15 @@ public record PartakeHealthResult(Int16 ContractCode, WorkTaxingTerms TaxingTerm
 public class PartakeSocialTarget
 {
     public Int16 ContractCode { get; private set; }
-    public WorkTaxingTerms TaxingTerm { get; private set; }
+    public WorkTaxingTerms TaxpayerTerm { get; private set; }
     public Int16 InterestCode { get; private set; }
     public WorkSocialTerms SubjectTerm { get; private set; }
     public Int16 PartakeCode { get; private set; }
     public Int32 TargetsBase { get; private set; }
-    public PartakeSocialTarget(Int16 contractCode, WorkTaxingTerms taxingTerm, Int16 interestCode, WorkSocialTerms subjectTerm, Int16 partakeCode, Int32 targetsBase)
+    public PartakeSocialTarget(Int16 contractCode, WorkTaxingTerms taxpayerTerm, Int16 interestCode, WorkSocialTerms subjectTerm, Int16 partakeCode, Int32 targetsBase)
     {
         this.ContractCode = contractCode;
-        this.TaxingTerm = taxingTerm;
+        this.TaxpayerTerm = taxpayerTerm;
         this.InterestCode = interestCode;
         this.SubjectTerm = subjectTerm;
         this.PartakeCode = partakeCode;
@@ -133,7 +133,7 @@ public class PartakeSocialTarget
         private static Int32 IncomeScore(PartakeSocialTarget t)
         {
             Int32 resultType = 0;
-            switch (t.TaxingTerm)
+            switch (t.TaxpayerTerm)
             {
                 case WorkTaxingTerms.TAXING_TERM_EMPLOYMENTS:
                     resultType = 900;
