@@ -9,7 +9,7 @@ namespace HraveMzdy.LegallyCz;
 public class ServiceLegallyCz : IServiceLegallyCz
 {
     private const Int16 MINIMAL_VERSION = 2010;
-    private const Int16 CURRENT_VERSION = 2022;
+    private const Int16 CURRENT_VERSION = 2024;
 
     private readonly IServiceProvider _serviceProvider;
     public ServiceLegallyCz(IServiceProvider serviceProvider)
