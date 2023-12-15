@@ -6,11 +6,11 @@ public class PartakeHealthTarget
 {
     public Int16 ContractCode { get; private set; }
     public WorkTaxingTerms TaxpayerTerm { get; private set; }
-    public Int16 InterestCode { get; private set; }
+    public UInt16 InterestCode { get; private set; }
     public WorkHealthTerms SubjectTerm { get; private set; }
-    public Int16 PartakeCode { get; private set; }
+    public UInt16 PartakeCode { get; private set; }
     public Int32 TargetsBase { get; private set; }
-    public PartakeHealthTarget(Int16 contractCode, WorkTaxingTerms taxpayerTerm, Int16 interestCode, WorkHealthTerms subjectTerm, Int16 partakeCode, Int32 targetsBase)
+    public PartakeHealthTarget(Int16 contractCode, WorkTaxingTerms taxpayerTerm, UInt16 interestCode, WorkHealthTerms subjectTerm, UInt16 partakeCode, Int32 targetsBase)
     {
         this.ContractCode = contractCode;
         this.TaxpayerTerm = taxpayerTerm;
@@ -105,16 +105,16 @@ public class PartakeHealthTarget
         return new PartakeHealthTargetComparator();
     }
 }
-public record PartakeHealthResult(Int16 ContractCode, WorkTaxingTerms TaxingTerm, Int16 InterestCode, WorkHealthTerms SubjectTerm, Int16 PartakeCode, Int32 TargetsBase, Int32 ResultsBase);
+public record PartakeHealthResult(Int16 ContractCode, WorkTaxingTerms TaxingTerm, UInt16 InterestCode, WorkHealthTerms SubjectTerm, UInt16 PartakeCode, Int32 TargetsBase, Int32 ResultsBase);
 public class PartakeSocialTarget
 {
     public Int16 ContractCode { get; private set; }
     public WorkTaxingTerms TaxpayerTerm { get; private set; }
-    public Int16 InterestCode { get; private set; }
+    public UInt16 InterestCode { get; private set; }
     public WorkSocialTerms SubjectTerm { get; private set; }
-    public Int16 PartakeCode { get; private set; }
+    public UInt16 PartakeCode { get; private set; }
     public Int32 TargetsBase { get; private set; }
-    public PartakeSocialTarget(Int16 contractCode, WorkTaxingTerms taxpayerTerm, Int16 interestCode, WorkSocialTerms subjectTerm, Int16 partakeCode, Int32 targetsBase)
+    public PartakeSocialTarget(Int16 contractCode, WorkTaxingTerms taxpayerTerm, UInt16 interestCode, WorkSocialTerms subjectTerm, UInt16 partakeCode, Int32 targetsBase)
     {
         this.ContractCode = contractCode;
         this.TaxpayerTerm = taxpayerTerm;
@@ -215,4 +215,4 @@ public class PartakeSocialTarget
         return new PartakeSocialTargetComparator();
     }
 }
-public record PartakeSocialResult(Int16 ContractCode, WorkTaxingTerms TaxingTerm, Int16 InterestCode, WorkSocialTerms SubjectTerm, Int16 PartakeCode, Int32 TargetsBase, Int32 ResultsBase);
+public record PartakeSocialResult(Int16 ContractCode, WorkTaxingTerms TaxingTerm, UInt16 InterestCode, WorkSocialTerms SubjectTerm, UInt16 PartakeCode, Int32 TargetsBase, Int32 ResultsBase);
