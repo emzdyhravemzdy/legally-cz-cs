@@ -33,4 +33,8 @@ public class LegallyPeriod : ILegallyPeriod
         return clone;
     }
 
+    public bool Equals(ILegallyPeriod? other)
+    {
+        return (Code == (other?.Code ?? EmptyCode));
+    }
 }

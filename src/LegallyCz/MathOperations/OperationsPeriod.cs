@@ -112,7 +112,11 @@ public static class OperationsPeriod
     }
     public static Int32[] TimesheetWeekSchedule(ILegallyPeriod period, Int32 secondsWeekly, Byte workdaysWeekly)
     {
-        Int32 secondsDaily = (secondsWeekly / Math.Min(workdaysWeekly, WEEKDAYS_COUNT));
+        Int32 secondsDaily = 0;
+        if (workdaysWeekly > 0)
+        {
+            secondsDaily = (secondsWeekly / Math.Min(workdaysWeekly, WEEKDAYS_COUNT));
+        }
 
         Int32 secRemainder = secondsWeekly - (secondsDaily * workdaysWeekly);
 
