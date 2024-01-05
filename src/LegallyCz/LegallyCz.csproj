@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <Version>0.0.10</Version>
     <PackageId>HraveMzdy.LegallyCz</PackageId>
-    <Version>0.0.9</Version>
     <Authors>Ladislav Lisy</Authors>
     <PackageIcon>icon-square.png</PackageIcon>
     <PackageTags>Salary, Health, Social, Taxing Properties for years 2010-2024</PackageTags>
@@ -24,13 +24,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <ReleaseVersion>0.0.10</ReleaseVersion>
     <Copyright>Copyright 2023</Copyright>
     <Owners>hravemzdy.org</Owners>
     <Title>A simple, Salary, Health, Social, Taxing Calculator</Title>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>hravemzdy__org_publish_key.snk</AssemblyOriginatorKeyFile>
-    <ReleaseVersion>0.0.9</ReleaseVersion>
     <SynchReleaseVersion>true</SynchReleaseVersion>
   </PropertyGroup>
 
@@ -45,7 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="HraveMzdy.LinqErrorOr" Version="0.0.8" />
+    <PackageReference Include="HraveMzdy.LinqErrorOr" Version="0.0.9" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />

@@ -20,7 +20,7 @@ public class Service_LegallyCz_Example_HealthTest : Service_LegallyCz_Example_Ba
         }
         catch (Xunit.Sdk.XunitException e)
         {
-            throw e;
+            throw new Xunit.Sdk.XunitException("Test ShouldBeValidBundle exception", e);
         }
     }
 }
