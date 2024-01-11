@@ -163,10 +163,10 @@ public abstract class PropsHealthBase : PropsBase, IPropsHealth
 
     public Tuple<Int32, Int32, IEnumerable<PartakeHealthResult>> AnnualsBasisCut(IEnumerable<PartakeHealthTarget> incomeList, Int32 annuityBasis)
     {
-        Int32 annualyMaxim = this.MaxAnnualsBasis;
-        Int32 annualsBasis = Math.Max(0, annualyMaxim - annuityBasis);
+        Int32 annualsMaxim = this.MaxAnnualsBasis;
+        Int32 annualsBasis = Math.Max(0, annualsMaxim - annuityBasis);
         var resultInit = new Tuple<Int32, Int32, IEnumerable<PartakeHealthResult>>(
-            annualyMaxim, annualsBasis, Array.Empty<PartakeHealthResult>());
+            annualsMaxim, annualsBasis, Array.Empty<PartakeHealthResult>());
 
         var resultList = incomeList.Aggregate(resultInit,
             (agr, x) => {
@@ -177,15 +177,19 @@ public abstract class PropsHealthBase : PropsBase, IPropsHealth
                 if (x.PartakeCode != 0)
                 {
                     cutAnnualsBasis = rawAnnualsBasis;
-                    if (agr.Item1 > 0)
+                    if (annualsMaxim > 0)
                     {
-                        var ovrAnnualsBasis = Math.Max(0, rawAnnualsBasis - agr.Item2);
-                        cutAnnualsBasis = (rawAnnualsBasis - ovrAnnualsBasis);
+                        if (agr.Item1 > 0)
+                        {
+                            var ovrAnnualsBasis = Math.Max(0, rawAnnualsBasis - agr.Item2);
+                            cutAnnualsBasis = (rawAnnualsBasis - ovrAnnualsBasis);
+                        }
+                        remAnnualsBasis = Math.Max(0, (agr.Item2 - cutAnnualsBasis));
                     }
-                    remAnnualsBasis = Math.Max(0, (agr.Item2 - cutAnnualsBasis));
+                    //cutAnnualsBasis = Math.Max(0, cutAnnualsBasis);
                 }
 
-                PartakeHealthResult r = new PartakeHealthResult(x.ContractCode, x.TaxpayerTerm, x.InterestCode, x.SubjectTerm, x.PartakeCode, x.TargetsBase, Math.Max(0, cutAnnualsBasis));
+                PartakeHealthResult r = new PartakeHealthResult(x.ContractCode, x.TaxpayerTerm, x.InterestCode, x.SubjectTerm, x.PartakeCode, x.TargetsBase, cutAnnualsBasis);
                 return new Tuple<Int32, Int32, IEnumerable<PartakeHealthResult>>(
                     agr.Item1, remAnnualsBasis, agr.Item3.Concat(new PartakeHealthResult[] { r }).ToArray());
             });

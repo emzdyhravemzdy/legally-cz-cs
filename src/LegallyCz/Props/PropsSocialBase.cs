@@ -154,15 +154,19 @@ public abstract class PropsSocialBase : PropsBase, IPropsSocial
                 if (x.PartakeCode != 0)
                 {
                     cutAnnualsBasis = rawAnnualsBasis;
-                    if (agr.Item1 > 0)
+                    if (annualsMaxim > 0)
                     {
-                        var ovrAnnualsBasis = Math.Max(0, rawAnnualsBasis - agr.Item2);
-                        cutAnnualsBasis = (rawAnnualsBasis - ovrAnnualsBasis);
+                        if (agr.Item1 > 0)
+                        {
+                            var ovrAnnualsBasis = Math.Max(0, rawAnnualsBasis - agr.Item2);
+                            cutAnnualsBasis = (rawAnnualsBasis - ovrAnnualsBasis);
+                        }
+                        remAnnualsBasis = Math.Max(0, (agr.Item2 - cutAnnualsBasis));
                     }
-                    remAnnualsBasis = Math.Max(0, (agr.Item2 - cutAnnualsBasis));
+                    //cutAnnualsBasis = Math.Max(0, cutAnnualsBasis);
                 }
 
-                PartakeSocialResult r = new PartakeSocialResult(x.ContractCode, x.TaxpayerTerm, x.InterestCode, x.SubjectTerm, x.PartakeCode, x.TargetsBase, Math.Max(0, cutAnnualsBasis));
+                PartakeSocialResult r = new PartakeSocialResult(x.ContractCode, x.TaxpayerTerm, x.InterestCode, x.SubjectTerm, x.PartakeCode, x.TargetsBase, cutAnnualsBasis);
                 return new Tuple<Int32, Int32, IEnumerable<PartakeSocialResult>>(
                     agr.Item1, remAnnualsBasis, agr.Item3.Concat(new PartakeSocialResult[] { r }).ToArray());
             });
