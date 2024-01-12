@@ -46,9 +46,9 @@ public class PropsSocial2010 : PropsSocialBase, IPropsSocial
                 return false;
             case WorkSocialTerms.SOCIAL_TERM_SMALLS_EMPL:
                 return false;
-            case WorkSocialTerms.SOCIAL_TERM_SHORTS_MEET:
+            case WorkSocialTerms.SOCIAL_TERM_MEETSH_EMPL:
                 return false;
-            case WorkSocialTerms.SOCIAL_TERM_SHORTS_DENY:
+            case WorkSocialTerms.SOCIAL_TERM_DENYSH_EMPL:
                 return false;
             case WorkSocialTerms.SOCIAL_TERM_BY_CONTRACT:
                 return false;

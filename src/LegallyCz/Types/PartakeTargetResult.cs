@@ -157,10 +157,10 @@ public class PartakeSocialTarget
                 case WorkSocialTerms.SOCIAL_TERM_SMALLS_EMPL:
                     resultBase = 5000;
                     break;
-                case WorkSocialTerms.SOCIAL_TERM_SHORTS_MEET:
+                case WorkSocialTerms.SOCIAL_TERM_MEETSH_EMPL:
                     resultBase = 4000;
                     break;
-                case WorkSocialTerms.SOCIAL_TERM_SHORTS_DENY:
+                case WorkSocialTerms.SOCIAL_TERM_DENYSH_EMPL:
                     resultBase = 0;
                     break;
                 case WorkSocialTerms.SOCIAL_TERM_BY_CONTRACT:

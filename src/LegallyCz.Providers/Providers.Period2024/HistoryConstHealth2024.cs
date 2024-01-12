@@ -24,7 +24,7 @@ class HistoryConstHealth2024
     public const Int32 MIN_MONTHLY_BASIS = HistoryConstSalary2024.MIN_MONTHLY_WAGE;
     public const Int32 MAX_ANNUALS_BASIS = HistoryConstHealth2023.MAX_ANNUALS_BASIS;
     public const Int32 LIM_MONTHLY_STATE = HistoryConstHealth2023.LIM_MONTHLY_STATE;
-    public const Int32 LIM_MONTHLY_DIS50 = 14570;
+    public const Int32 LIM_MONTHLY_DIS50 = 15440;
     public const decimal FACTOR_COMPOUND = HistoryConstHealth2023.FACTOR_COMPOUND;
     public const decimal FACTOR_EMPLOYEE = HistoryConstHealth2023.FACTOR_EMPLOYEE;
     public const Int32 MARGIN_INCOME_EMP = HistoryConstHealth2023.MARGIN_INCOME_EMP;
